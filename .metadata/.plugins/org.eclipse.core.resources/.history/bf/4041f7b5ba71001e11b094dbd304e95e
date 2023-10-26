@@ -1,0 +1,21 @@
+package discoDuroDeRoerEjerciciosBasicosJavaPropuestos;
+
+public class Ejer2 {
+
+	/**
+	 * 2) Declara 2 variables numéricas (con el valor que desees), e indica cual es
+	 * mayor de los dos. Si son iguales indicarlo también. Ves cambiando los valores
+	 * para comprobar que funciona.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int num0 = 0, num1= 1;
+		System.out.println(num0 != num1 ? Math.max(num0, num1) + " es mayor que " + Math.min(num0, num1) : "Son iguales");
+		int numB1 = 1;
+		System.out.println(numB1 != num1 ? Math.max(numB1, num1) + " es mayor que " + Math.min(numB1, num1) : "Son iguales");
+		int numC1 = 2;
+		System.out.println(numC1 != num1 ? Math.max(numC1, num1) + " es mayor que " + Math.min(numC1, num1) : "Son iguales");
+	}
+
+}

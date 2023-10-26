@@ -1,0 +1,25 @@
+package dia3;
+
+public class Ejer3 {
+
+	/**
+	 * Ejercicio Nº 3 - POO Crea una clase llamada "Estudiante" que represente a un
+	 * estudiante de una escuela. La clase debe tener los siguientes atributos: - id
+	 * - nombre - edad - nivel - por ejemplo, "Primaria" o "Secundaria" - nota
+	 * 
+	 * La clase "Estudiante" debe tener dos constructores y sus métodos "getters" y
+	 * "setters" para cada atributo.
+	 * 
+	 * Luego, en el método principal (main), crear un vector de estudiantes y
+	 * almacenar 5 objetos estudiantes. Por último, recorrer el vector, mostrar el
+	 * nombre y la nota de cada estudiante y además calcular el promedio de notas de
+	 * los estudiantes (por nivel) y mostrarlos.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

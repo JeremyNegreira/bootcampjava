@@ -1,0 +1,21 @@
+package discoDuroDeRoerEjerciciosBasicosJavaPropuestos;
+
+public class Ejer1 {
+
+	/**
+	 * 1) Declara dos variables numéricas (con el valor que desees), muestra por
+	 * consola la suma, resta, multiplicación, división y módulo (resto de la
+	 * división).
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		int num1 = 1, num2 = 2;
+		System.out.println("SUMA: " + (num2 + num1));
+		System.out.println("RESTA: " + (num2 - num1));
+		System.out.println("DIVISION: " + (num2 / num1));
+		System.out.println("MULTIPLICACION: " + (num2 * num1));
+		System.out.println("RESTO: " + (num2 % num1));
+	}
+
+}

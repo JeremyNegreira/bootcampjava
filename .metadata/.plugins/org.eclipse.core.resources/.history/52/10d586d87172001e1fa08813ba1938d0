@@ -1,0 +1,17 @@
+package dia2;
+
+public class Ejer1 {
+
+	/**
+	 * Ejercicio Nº 1 - Estructuras Condicionales Crear un programa en Java que
+	 * permita ingresar dos números enteros, determine y muestre por pantalla cuál
+	 * de los dos es mayor o si son iguales.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

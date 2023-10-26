@@ -1,0 +1,18 @@
+package dia2;
+
+public class Ejer7 {
+
+	/**
+	 * Ejercicio Nº 7 - Arreglos: Vectores Realizar lo mismo que en el ejercicio 4,
+	 * pero utilizando un vector para guardar los números ingresados. Una vez
+	 * almacenados los números, deberá recorrer el vector, realizar la suma y luego
+	 * mostrar por pantalla.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,23 @@
+package dia1;
+
+import java.util.Scanner;
+
+public class Ejer3 {
+
+	/**
+	 * Ejercicio Nº 3 - Operaciones de Lectura, Variables y Operadores Escribir un
+	 * programa que pida al usuario que ingrese por teclado: 5 números. Luego
+	 * mostrar por pantalla/consola lo siguiente: La suma total de los números
+	 * ingresados y el promedio de estos.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int[] num = [0, 0, 0, 0,0 ];
+		for (int i = 5; i > 0; i--) {
+			scanner.nextInt();
+		}
+	}
+
+}

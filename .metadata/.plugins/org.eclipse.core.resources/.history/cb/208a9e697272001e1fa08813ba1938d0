@@ -1,0 +1,22 @@
+package dia2;
+
+import java.util.Scanner;
+
+public class Ejer1 {
+
+	/**
+	 * Ejercicio Nº 1 - Estructuras Condicionales Crear un programa en Java que
+	 * permita ingresar dos números enteros, determine y muestre por pantalla cuál
+	 * de los dos es mayor o si son iguales.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("Introduzca dos numeros enteros");
+		int num1 = scanner.nextInt(), num2  = scanner.nextInt();
+		
+	}
+
+}

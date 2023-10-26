@@ -1,0 +1,30 @@
+package dia1;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Ejer4 {
+
+	
+	/**
+	 * Calcular el IMC (masa/altura^2) (con entradas)
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		DecimalFormat format = new DecimalFormat("#.00");
+		Scanner scanner = new Scanner(System.in);
+		
+		double masa = 0, altura = 0, imc = 0;
+		
+		System.out.println("Introduce masa y altura");
+		masa = scanner.nextDouble();
+		altura = scanner.nextDouble();
+		imc = masa / Math.pow(altura, 2);
+		
+		System.out.println("Masa: " + format.format(masa));
+		System.out.println("Altura: " + format.format(altura));
+		System.out.println("IMC: " + format.format(imc));
+	}
+
+}

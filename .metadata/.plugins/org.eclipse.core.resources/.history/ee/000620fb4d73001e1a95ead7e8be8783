@@ -1,0 +1,32 @@
+package dia3;
+
+import java.util.Date;
+
+public class Ejer2 {
+
+	/**
+	 * Ejercicio Nº 2 - POO Crear una clase Impresora, que tenga los siguientes
+	 * atributos: modelo, tipo de conexión, fecha de fabricación y hojas disponibles
+	 * (tener en cuenta todos sus atributos, constructores y métodos getters y
+	 * setters).
+	 * 
+	 * a) En el método main: Crear un vector de tipo Impresora de tres posiciones.
+	 * Crear tres impresoras y guardarlas en él. b) En el método main: Recorrer el
+	 * vector creado y mostrar por pantalla el modelo y tipo de conexión de cada
+	 * impresora almacenada.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+
+class Impresora {
+	private String modelo;
+	private String tipoConexion;
+	private Date fechaFabricacion;
+	private int hojas;
+}

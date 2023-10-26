@@ -1,0 +1,35 @@
+package dia1;
+
+import java.text.DecimalFormat;
+import java.util.Scanner;
+
+public class Ejer5 {
+
+	/**
+	 * Ejercicio Nº 5 - Operaciones de Lectura, Variables y Operadores Escribir un
+	 * programa que calcule el área de un rectángulo. Para esto, solicite al usuario
+	 * que ingrese la base y altura de este. Que muestre por pantalla el área
+	 * calculada.
+	 * 
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		DecimalFormat format = new DecimalFormat("#.00");
+
+		double base = 0, altura = 0, area = 0;
+
+		try (Scanner scanner = new Scanner(System.in)) {
+
+			System.out.println("Introduce masa y altura");
+			base = scanner.nextDouble();
+			altura = scanner.nextDouble();
+			area = base / Math.pow(altura, 2);
+
+		}
+
+		System.out.println("Masa: " + format.format(base));
+		System.out.println("Altura: " + format.format(altura));
+		System.out.println("IMC: " + format.format(area));
+	}
+
+}
