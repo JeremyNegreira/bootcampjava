@@ -27,7 +27,7 @@ public class Main {
 				}
 
 				// Solicitar al usuario que elija un asiento
-				System.out.print("Ingrese la fila (1-5) y el número de asiento (1-5): ");
+				System.out.println("Ingrese la fila (1-5) y el número de asiento (1-5): ");
 				int fila = scanner.nextInt() - 1;
 				int numeroAsiento = scanner.nextInt() - 1;
 

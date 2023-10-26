@@ -1,0 +1,10 @@
+package codigo;
+
+public class Electrodomestico {
+
+	private String cod;
+	private String marca;
+	private String modelo;
+	private double consumo;
+
+}

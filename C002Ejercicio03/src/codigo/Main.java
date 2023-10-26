@@ -22,7 +22,7 @@ public class Main {
 			double[] temperaturas = new double[diasSemana];
 
 			for (int i = 0; i < diasSemana; i++) {
-				System.out.print("Ingrese la temperatura máxima del día " + (i + 1));
+				System.out.println("Ingrese la temperatura máxima del día " + (i + 1));
 				temperaturas[i] = scanner.nextDouble();
 			}
 
