@@ -31,20 +31,22 @@ public class Main {
 			// utilizar un vector de tamaño fijo para simplificar el ejercicio.
 			String[] vector = new String[3];
 			for (int i = 0; i <= vector.length - 1; i++) {
-				System.out.println("Introduce el valor de índice " + i);;
+				System.out.println("Introduce el valor de índice " + i);
+				;
 				vector[i] = scannerDatos.nextLine();
 			}
 
 			// Luego, implementa un mecanismo que te permita acceder a los datos almacenados
 			// en el vector proporcionando un índice.
 			Scanner scannerIndice = new Scanner(System.in);
-			System.out.println("Consulta un valor introduciendo el índice a continuación [0, " + (vector.length - 1) + "]");
+			System.out.println(
+					"Consulta un valor introduciendo el índice a continuación [0, " + (vector.length - 1) + "]");
 			int indice = scannerIndice.nextInt();
 			try {
 				System.out.println("Posición " + indice + ": " + vector[indice]);
 			} catch (ArrayIndexOutOfBoundsException e) {
 				System.err.println("Estás tratando de entrar en una posición inválida");
-				
+
 			}
 			scannerIndice.nextLine();
 			scannerIndice.close();
