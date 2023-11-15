@@ -25,24 +25,39 @@ public class RegistroMascotas {
 		return registro;
 	}
 
+	/**
+	 * Devuelve el resultado de búsqueda utilizando equals sobre cada elemento de la
+	 * List<Mascota<?>> registro.
+	 * 
+	 * @param String nombre
+	 * @return List<Mascota<?>> resultadoBusqueda
+	 */
 	public List<Mascota<?>> buscarPorNombre(String nombre) {
-		List<Mascota<?>> resultado = new ArrayList<>();
+		List<Mascota<?>> resultadoBusqueda = new ArrayList<>();
 		for (Mascota<?> mascota : registro) {
 			if (mascota.getNombre().equals(nombre)) {
-				resultado.add(mascota);
+				resultadoBusqueda.add(mascota);
 			}
 		}
-		return resultado;
+		return resultadoBusqueda;
 	}
 
+	/**
+	 * Devuelve el resultado de búsqueda utilizando equals sobre cada elemento de la
+	 * List<Mascota<?>> registro. El método equals() debe estar implementado en el
+	 * tipo de especie.
+	 * 
+	 * @param especie
+	 * @return List<Mascota<?>> resultadoBusqueda
+	 */
 	public List<Mascota<?>> buscarPorEspecie(Object especie) {
-		List<Mascota<?>> resultado = new ArrayList<>();
+		List<Mascota<?>> resultadoBusqueda = new ArrayList<>();
 		for (Mascota<?> mascota : registro) {
 			if (mascota.getEspecie().equals(especie)) {
-				resultado.add(mascota);
+				resultadoBusqueda.add(mascota);
 			}
 		}
-		return resultado;
+		return resultadoBusqueda;
 	}
 
 	public int size() {
@@ -51,12 +66,12 @@ public class RegistroMascotas {
 
 	public void generarDatosAleatoriosDeMascotas(int cantidad) {
 		Random random = new Random();
-		String[] nombres = { "Max", "Luna", "Rex", "Milo", "Cleo" };
-		String[] especies = { "Perro", "Gato", "Reptil", "Ave" };
+		String[] nombres = { "Luna", "Coco", "Nala", "Kira", "Lola", "Bimba", "Mia", "Maya", "Bella", "Dana", };
+		String[] especies = { "perros", "gatos", "reptiles", "aves" };
 
 		for (int i = 0; i < cantidad; i++) {
 			String nombreAleatorio = nombres[random.nextInt(nombres.length)];
-			int edadAleatoria = random.nextInt(10) + 1; // Edad entre 1 y 10
+			int edadAleatoria = random.nextInt(10);
 			String especieAleatoria = especies[random.nextInt(especies.length)];
 
 			Mascota<String> mascota = new Mascota<>(nombreAleatorio, edadAleatoria, especieAleatoria);

@@ -5,7 +5,7 @@ import java.util.List;
 import utils.RegistroMascotas;
 
 public class Main {
-	
+
 	private static String separador = "----------------------------------------------------------------";
 
 	/**
@@ -41,6 +41,12 @@ public class Main {
 		registroMascotas.agregarMascota(new Mascota<>("Firulais", 3, "perros"));
 		registroMascotas.agregarMascota(new Mascota<>("Michi", 2, "gatos"));
 
+		// Generar Datos Aleatorios para Mascotas
+		separar();
+		registroMascotas.generarDatosAleatoriosDeMascotas(5);
+		System.out.println("Mascotas: ");
+		registroMascotas.getRegistro().forEach(System.out::println);
+
 		// Buscar Mascotas por Nombre o Especie
 		separar();
 		List<Mascota<?>> mascotasPorNombre = registroMascotas.buscarPorNombre("Firulais");
@@ -56,12 +62,6 @@ public class Main {
 		separar();
 		int totalMascotas = registroMascotas.size();
 		System.out.println("Total mascotas: " + totalMascotas);
-
-		// Generar Datos Aleatorios para Mascotas
-		separar();
-		registroMascotas.generarDatosAleatoriosDeMascotas(5);
-		System.out.println("Mascotas: ");
-		registroMascotas.getRegistro().forEach(System.out::println);
 	}
 
 	private static void separar() {
