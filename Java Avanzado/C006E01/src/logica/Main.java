@@ -1,53 +1,69 @@
 package logica;
 
-import utils.InventarioAutos;
+import java.util.List;
+
+import utils.RegistroMascotas;
 
 public class Main {
 
 	private static String separador = "----------------------------------------------------------------";
-	
+
 	/**
-	 * Una concesionaria de vehículos necesita un sistema para administrar su
-	 * inventario de autos. Crea una clase Auto con atributos como marca, modelo,
-	 * año, y precio. Implementa una clase utilitaria InventarioAutos con métodos
-	 * genéricos para realizar las siguientes operaciones:
+	 * Una clínica veterinaria necesita un sistema para administrar su registro de
+	 * mascotas, para ello, se solicita la definición de una clase genérica
+	 * Mascota<T> con atributos como nombre, edad, y especie (no olvides el código o
+	 * id de mascota para identificar a cada una). Crea una clase utilitaria propia
+	 * llamada RegistroMascotas que cuente con métodos genéricos para:
 	 * 
-	 * Agregar Autos al Inventario: Utiliza un método genérico para agregar autos al
-	 * inventario de la concesionaria.
+	 * Agregar Mascotas al Registro: Utiliza métodos de la clase java.util junto con
+	 * genéricos para manipular colecciones como ArrayList o LinkedList y agregar
+	 * mascotas de distinto tipo al registro de la veterinaria (puedes tomar como
+	 * ejemplos de tipos: perros, gatos, reptiles y aves).
 	 * 
-	 * Buscar Autos por Marca o Año: Implementa métodos genéricos que permitan
-	 * buscar autos por marca o año dentro del inventario.
+	 * Buscar Mascotas por Nombre o Especie: Emplea métodos de las clases
+	 * utilitarias como Collections o Arrays junto con genéricos para realizar
+	 * búsquedas eficientes por nombre o especie dentro del registro de mascotas.
 	 * 
-	 * Calcular el Valor Total del Inventario: Desarrolla un método genérico que
-	 * calcule el valor total de todos los autos en el inventario.
+	 * Contar la Cantidad Total de Mascotas Registradas: Utiliza métodos de
+	 * java.util para obtener el tamaño de la colección y contar la cantidad total
+	 * de mascotas registradas en la veterinaria.
+	 * 
+	 * Generar Datos Aleatorios para Mascotas: Utiliza la clase Random de java.util
+	 * para generar datos aleatorios, como nombres, edades o especies, para agregar
+	 * mascotas al registro.
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		InventarioAutos inventario = new InventarioAutos();
+		RegistroMascotas registroMascotas = new RegistroMascotas();
 
-		// Agregar Autos al Inventario
-		inventario.agregarAuto(new Auto<String, String>(15000.0, 2015, "Honda", "Accord"));
-		inventario.agregarAuto(new Auto<String, String>(22000.0, 2018, "Ford", "Fusion"));
-		inventario.agregarAuto(new Auto<String, String>(18000.0, 2017, "Chevrolet", "Malibu"));
-		inventario.agregarAuto(new Auto<String, String>(25000.0, 2020, "Nissan", "Altima"));
+		// Agregar Mascotas al Registro
+		registroMascotas.agregarMascota(new Mascota<>("Firulais", 3, "perros"));
+		registroMascotas.agregarMascota(new Mascota<>("Michi", 2, "gatos"));
 
-		// Buscar Autos por Marca o Año
-		System.out.println("Coches de 2020: ");
-		inventario.buscarAuto(2020).forEach(System.out::println);
+		// Generar Datos Aleatorios para Mascotas
+		registroMascotas.generarDatosAleatoriosDeMascotas(5);
+		System.out.println("Mascotas: ");
+		registroMascotas.getRegistro().forEach(System.out::println);
+
+		// Buscar Mascotas por Nombre o Especie
+		separar();
+		List<Mascota<?>> mascotasPorNombre = registroMascotas.buscarMascota("Firulais");
+		System.out.println("Mascotas encontradas ('Firulais'): ");
+		mascotasPorNombre.forEach(System.out::println);
 
 		separar();
-		System.out.println("\nCoches 'Ford': ");
-		inventario.buscarAuto("Ford").forEach(System.out::println);
+		List<Mascota<?>> mascotasPorEspecie = registroMascotas.buscarMascota("gatos");
+		System.out.println("Mascotas encontradas ('gatos'): ");
+		mascotasPorEspecie.forEach(System.out::println);
 
-		// Calcular el Valor Total del Inventario
+		// Contar la Cantidad Total de Mascotas Registradas
 		separar();
-		System.out.print("\nValor total: ");
-		System.out.println(inventario.calcularValorTotal());
+		int totalMascotas = registroMascotas.size();
+		System.out.println("Total mascotas: " + totalMascotas);
 	}
-	
+
 	private static void separar() {
 		System.out.println(separador);
 	}
-
 }

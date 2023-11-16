@@ -1,69 +1,81 @@
 package logica;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
-
-import utils.RegistroMascotas;
+import java.util.Map;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 public class Main {
 
-	private static String separador = "----------------------------------------------------------------";
-
 	/**
-	 * Una clínica veterinaria necesita un sistema para administrar su registro de
-	 * mascotas, para ello, se solicita la definición de una clase genérica
-	 * Mascota<T> con atributos como nombre, edad, y especie (no olvides el código o
-	 * id de mascota para identificar a cada una). Crea una clase utilitaria propia
-	 * llamada RegistroMascotas que cuente con métodos genéricos para:
+	 * Imagina que estás construyendo una aplicación para gestionar eventos en una
+	 * agenda. Cada evento tiene un nombre, una fecha y una categoría (por ejemplo,
+	 * "Reunión", "Conferencia", "Taller"). Implementa las siguientes operaciones
+	 * utilizando Streams y Optionals:
 	 * 
-	 * Agregar Mascotas al Registro: Utiliza métodos de la clase java.util junto con
-	 * genéricos para manipular colecciones como ArrayList o LinkedList y agregar
-	 * mascotas de distinto tipo al registro de la veterinaria (puedes tomar como
-	 * ejemplos de tipos: perros, gatos, reptiles y aves).
+	 * Filtra los eventos que están programados para una fecha específica.
 	 * 
-	 * Buscar Mascotas por Nombre o Especie: Emplea métodos de las clases
-	 * utilitarias como Collections o Arrays junto con genéricos para realizar
-	 * búsquedas eficientes por nombre o especie dentro del registro de mascotas.
+	 * Agrupa los eventos por categoría y cuenta cuántos eventos hay en cada
+	 * categoría.
 	 * 
-	 * Contar la Cantidad Total de Mascotas Registradas: Utiliza métodos de
-	 * java.util para obtener el tamaño de la colección y contar la cantidad total
-	 * de mascotas registradas en la veterinaria.
-	 * 
-	 * Generar Datos Aleatorios para Mascotas: Utiliza la clase Random de java.util
-	 * para generar datos aleatorios, como nombres, edades o especies, para agregar
-	 * mascotas al registro.
+	 * Encuentra el evento más próximo en el tiempo utilizando Optionals.
 	 * 
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		RegistroMascotas registroMascotas = new RegistroMascotas();
+		// Logica de datos de eventos simple de ejemplo
+		List<Evento> eventos = new ArrayList<>();
+		eventos.add(new Evento("Churros", "Taller", LocalDate.of(2024, 1, 15)));
+		eventos.add(new Evento("Agentes", "Reunión", LocalDate.of(2024, 3, 25)));
+		eventos.add(new Evento("Socios", "Conferencia", LocalDate.of(2024, 3, 25)));
 
-		// Agregar Mascotas al Registro
-		registroMascotas.agregarMascota(new Mascota<>("Firulais", 3, "perros"));
-		registroMascotas.agregarMascota(new Mascota<>("Michi", 2, "gatos"));
+		// Filtrado de eventos para una fecha especifica
+		System.out.println("Eventos de la fecha " + LocalDate.of(2024, 3, 25));
+		eventos.stream().filter(evento -> evento.getFecha().equals(LocalDate.of(2024, 3, 25)))
+				.forEach(System.out::println);
+		System.out.println("\n");
 
-		// Generar Datos Aleatorios para Mascotas
-		registroMascotas.generarDatosAleatoriosDeMascotas(5);
-		System.out.println("Mascotas: ");
-		registroMascotas.getRegistro().forEach(System.out::println);
+		// Agrupado de eventos por categoría y recuento
+		Map<String, Long> recuentoEventosPorCategoria = eventos.stream()
+				.collect(Collectors.groupingBy(Evento::getCategoria, // Agrupar los eventos por categoría
+						Collectors.counting())); // Recuento
 
-		// Buscar Mascotas por Nombre o Especie
-		separar();
-		List<Mascota<?>> mascotasPorNombre = registroMascotas.buscarMascota("Firulais");
-		System.out.println("Mascotas encontradas ('Firulais'): ");
-		mascotasPorNombre.forEach(System.out::println);
+		recuentoEventosPorCategoria.forEach((categoria, count) -> System.out.println(categoria + ": " + count));
 
-		separar();
-		List<Mascota<?>> mascotasPorEspecie = registroMascotas.buscarMascota("gatos");
-		System.out.println("Mascotas encontradas ('gatos'): ");
-		mascotasPorEspecie.forEach(System.out::println);
+		// Evento más próximo en el tiempo utilizando Optionals.
+		Optional<Evento> eventoMasProximo = eventos.stream().sorted(Comparator.comparing(Evento::getFecha)).findFirst();
 
-		// Contar la Cantidad Total de Mascotas Registradas
-		separar();
-		int totalMascotas = registroMascotas.size();
-		System.out.println("Total mascotas: " + totalMascotas);
+		System.out.println("\n\n" + eventoMasProximo);
 	}
 
-	private static void separar() {
-		System.out.println(separador);
+}
+
+class Evento {
+	private String nombre;
+	private String categoria;
+	private LocalDate fecha;
+
+	public Evento(String nombre, String categoria, LocalDate fecha) {
+		super();
+		this.nombre = nombre;
+		this.categoria = categoria;
+		this.fecha = fecha;
 	}
+
+	public LocalDate getFecha() {
+		return fecha;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	@Override
+	public String toString() {
+		return "Evento [nombre=" + nombre + ", categoria=" + categoria + ", fecha=" + fecha + "]";
+	}
+
 }

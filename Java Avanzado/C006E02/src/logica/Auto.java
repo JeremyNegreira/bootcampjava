@@ -38,7 +38,7 @@ public class Auto<TModelo, TMarca> {
 
 	@Override
 	public String toString() {
-		return "Auto [id=" + id + ", precio=" + precio + ", year=" + year + ", modelo=" + modelo + ", marca=" + marca
+		return "Auto [id=" + id + ", precio=" + precio + ", año=" + year + ", modelo=" + modelo + ", marca=" + marca
 				+ "]";
 	}
 
