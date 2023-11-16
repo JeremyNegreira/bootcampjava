@@ -19,26 +19,26 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		// Directorio raíz y archivo
-		Directorio directorioRaiz = new Directorio("C:");
+		Proyecto directorioRaiz = new Proyecto("C:");
 
 		directorioRaiz.agregarArchivo("DumpStack.txt");
 
 		// Subdirectorios del raíz
-		Directorio directorioUsers = new Directorio("Users");
+		Proyecto directorioUsers = new Proyecto("Users");
 
 		directorioRaiz.agregarSubdirectorio(directorioUsers);
 
 		// Subdirectorios de Users
-		Directorio directorioUserJuan = new Directorio("Juan");
-		Directorio directorioUserPedro = new Directorio("Pedro");
+		Proyecto directorioUserJuan = new Proyecto("Juan");
+		Proyecto directorioUserPedro = new Proyecto("Pedro");
 
 		directorioUsers.agregarSubdirectorio(directorioUserPedro);
 		directorioUsers.agregarSubdirectorio(directorioUserJuan);
 
 		// Subdirectorios y archivos de Juan
-		Directorio directorioDesktop = new Directorio("Desktop");
-		Directorio directorioDocuments = new Directorio("Documents");
-		Directorio directorioDownloads = new Directorio("Downloads");
+		Proyecto directorioDesktop = new Proyecto("Desktop");
+		Proyecto directorioDocuments = new Proyecto("Documents");
+		Proyecto directorioDownloads = new Proyecto("Downloads");
 
 		directorioUserJuan.agregarSubdirectorio(directorioDesktop);
 		directorioUserJuan.agregarSubdirectorio(directorioDocuments);

@@ -1,13 +1,13 @@
 package utils;
 
-import logica.Directorio;
+import logica.Proyecto;
 
 public class ExploradorDirectorios {
 
-	public static String explorarDirectorio(Directorio directorio) {
+	public static String explorarDirectorio(Proyecto directorio) {
 		StringBuilder mapeadoDirectorio = new StringBuilder();
 		mapeadoDirectorio.append(directorio);
-		for (Directorio subdirectorio : directorio.getSubdirectorios()) {
+		for (Proyecto subdirectorio : directorio.getSubdirectorios()) {
 			mapeadoDirectorio.append(System.lineSeparator()).append("|-->")
 					.append(explorarDirectorio(subdirectorio, 1));
 		}
@@ -17,10 +17,10 @@ public class ExploradorDirectorios {
 		return mapeadoDirectorio.toString();
 	}
 
-	private static String explorarDirectorio(Directorio directorio, int nivel) {
+	private static String explorarDirectorio(Proyecto directorio, int nivel) {
 		StringBuilder mapeadoDirectorio = new StringBuilder();
 		mapeadoDirectorio.append(directorio);
-		for (Directorio subdirectorio : directorio.getSubdirectorios()) {
+		for (Proyecto subdirectorio : directorio.getSubdirectorios()) {
 			mapeadoDirectorio.append(System.lineSeparator());
 			for (int i = nivel; i > 0; i--)
 				mapeadoDirectorio.append("|   ");

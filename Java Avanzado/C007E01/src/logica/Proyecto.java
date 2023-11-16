@@ -6,23 +6,23 @@ import java.util.List;
 /**
  * 
  */
-public class Directorio {
+public class Proyecto {
 	private static int contadorId = 0;
 	private int id;
 	private String nombre;
-	private List<Directorio> subdirectorios;
+	private List<Proyecto> subdirectorios;
 	private List<String> archivos;
 
 	// Constructor, métodos para agregar subdirectorios y archivos, etc.
-	public Directorio(String nombre) {
+	public Proyecto(String nombre) {
 		super();
 		this.id = ++contadorId;
 		this.nombre = nombre;
-		this.subdirectorios = new ArrayList<Directorio>(1);
+		this.subdirectorios = new ArrayList<Proyecto>(1);
 		this.archivos = new ArrayList<String>(1);
 	}
 
-	public void agregarSubdirectorio(Directorio subdirectorio) {
+	public void agregarSubdirectorio(Proyecto subdirectorio) {
 		subdirectorios.add(subdirectorio);
 	}
 
@@ -30,7 +30,7 @@ public class Directorio {
 		archivos.add(archivo);
 	}
 
-	public List<Directorio> getSubdirectorios() {
+	public List<Proyecto> getSubdirectorios() {
 		return subdirectorios;
 	}
 
