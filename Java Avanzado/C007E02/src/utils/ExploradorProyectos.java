@@ -5,10 +5,10 @@ import logica.Tarea;
 
 public class ExploradorProyectos {
 
-	public static String mapearProyecto(Proyecto directorio) {
+	public static String mapearProyecto(Proyecto proyecto) {
 		StringBuilder mapeadoProyecto = new StringBuilder();
-		mapeadoProyecto.append(directorio);
-		for (Tarea tarea : directorio.getTareas()) {
+		mapeadoProyecto.append("Proyecto: ").append(proyecto);
+		for (Tarea tarea : proyecto.getTareas()) {
 			mapeadoProyecto.append(System.lineSeparator()).append("|-- ").append(mapearTarea(tarea, 1));
 		}
 		return mapeadoProyecto.toString();
@@ -16,7 +16,7 @@ public class ExploradorProyectos {
 
 	private static String mapearTarea(Tarea tarea, int nivel) {
 		StringBuilder mapeadoDirectorio = new StringBuilder();
-		mapeadoDirectorio.append(tarea);
+		mapeadoDirectorio.append(nivelTarea(nivel)).append(tarea);
 		for (Tarea subtarea : tarea.getSubtareas()) {
 			mapeadoDirectorio.append(System.lineSeparator());
 			for (int i = nivel; i > 0; i--)
@@ -24,5 +24,22 @@ public class ExploradorProyectos {
 			mapeadoDirectorio.append("|-- ").append(mapearTarea(subtarea, nivel + 1));
 		}
 		return mapeadoDirectorio.toString();
+	}
+	
+	private static String nivelTarea(int nivel) {
+		if (nivel == 1) 
+			return "Tarea: ";
+		
+		if (nivel == 2)
+			return "Subtarea: ";
+		
+		// Si es nivel = 3 sería nivelTarea = Sub-sub-subtarea
+		StringBuilder nivelTarea = new StringBuilder();
+		nivelTarea.append("Sub-");
+		for (int i = nivel - 3; i > 0; i--)
+			nivelTarea.append("sub-");
+		nivelTarea.append("subtarea: ");
+		
+		return nivelTarea.toString();
 	}
 }

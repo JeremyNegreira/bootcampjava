@@ -76,6 +76,13 @@ public class Main {
 		Tarea subtarea2_2_2 = new Tarea("Integrar con Backend");
 		subtarea2_2.agregarSubtarea(subtarea2_2_2);
 
+		// Sub-sub-subtarea tareaPrincipal3
+		Tarea subtarea3_2_1 = new Tarea("Solucionar más errores");
+		subtarea3_2.agregarSubtarea(subtarea3_2_1);
+
+		Tarea subTarea3_2_1_1 = new Tarea("Solucionar incluso más errores");
+		subtarea3_2_1.agregarSubtarea(subTarea3_2_1_1);
+
 		// Mostrar árbol de tareas del proyecto
 		System.out.println(ExploradorProyectos.mapearProyecto(proyecto));
 	}
