@@ -46,9 +46,12 @@ public class Main {
 		recuentoEventosPorCategoria.forEach((categoria, count) -> System.out.println(categoria + ": " + count));
 
 		// Evento más próximo en el tiempo utilizando Optionals.
-		Optional<Evento> eventoMasProximo = eventos.stream().sorted(Comparator.comparing(Evento::getFecha)).findFirst();
+		Optional<Evento> eventoMasProximo = eventos.stream()
+				.filter(evento -> evento.getFecha().isAfter(LocalDate.now()))
+				.min(Comparator.comparing(Evento::getFecha));
 
-		System.out.println("\n\n" + eventoMasProximo);
+		System.out.println("\n\n" + (eventoMasProximo.isPresent() ? "Evento más próximo: \n" + eventoMasProximo.get()
+				: "No hay eventos próximos"));
 	}
 
 }
