@@ -42,20 +42,19 @@ public class Main {
 		registroMascotas.agregarMascota(new Mascota<>("Michi", 2, "gatos"));
 
 		// Generar Datos Aleatorios para Mascotas
-		separar();
 		registroMascotas.generarDatosAleatoriosDeMascotas(5);
 		System.out.println("Mascotas: ");
 		registroMascotas.getRegistro().forEach(System.out::println);
 
 		// Buscar Mascotas por Nombre o Especie
 		separar();
-		List<Mascota<?>> mascotasPorNombre = registroMascotas.buscarPorNombre("Firulais");
-		System.out.println("Mascotas encontradas (por nombre): ");
+		List<Mascota<?>> mascotasPorNombre = registroMascotas.buscarMascota("Firulais");
+		System.out.println("Mascotas encontradas ('Firulais'): ");
 		mascotasPorNombre.forEach(System.out::println);
 
 		separar();
-		List<Mascota<?>> mascotasPorEspecie = registroMascotas.buscarPorEspecie("gatos");
-		System.out.println("Mascotas encontradas (por especie): ");
+		List<Mascota<?>> mascotasPorEspecie = registroMascotas.buscarMascota("gatos");
+		System.out.println("Mascotas encontradas ('gatos'): ");
 		mascotasPorEspecie.forEach(System.out::println);
 
 		// Contar la Cantidad Total de Mascotas Registradas

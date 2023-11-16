@@ -27,33 +27,16 @@ public class RegistroMascotas {
 
 	/**
 	 * Devuelve el resultado de búsqueda utilizando equals sobre cada elemento de la
-	 * List<Mascota<?>> registro.
-	 * 
-	 * @param String nombre
-	 * @return List<Mascota<?>> resultadoBusqueda
-	 */
-	public List<Mascota<?>> buscarPorNombre(String nombre) {
-		List<Mascota<?>> resultadoBusqueda = new ArrayList<>();
-		for (Mascota<?> mascota : registro) {
-			if (mascota.getNombre().equals(nombre)) {
-				resultadoBusqueda.add(mascota);
-			}
-		}
-		return resultadoBusqueda;
-	}
-
-	/**
-	 * Devuelve el resultado de búsqueda utilizando equals sobre cada elemento de la
 	 * List<Mascota<?>> registro. El método equals() debe estar implementado en el
 	 * tipo de especie.
 	 * 
 	 * @param especie
 	 * @return List<Mascota<?>> resultadoBusqueda
 	 */
-	public List<Mascota<?>> buscarPorEspecie(Object especie) {
+	public List<Mascota<?>> buscarMascota(Object campoBusqueda) {
 		List<Mascota<?>> resultadoBusqueda = new ArrayList<>();
 		for (Mascota<?> mascota : registro) {
-			if (mascota.getEspecie().equals(especie)) {
+			if (mascota.getEspecie().equals(campoBusqueda) || mascota.getNombre().equals(campoBusqueda)) {
 				resultadoBusqueda.add(mascota);
 			}
 		}
