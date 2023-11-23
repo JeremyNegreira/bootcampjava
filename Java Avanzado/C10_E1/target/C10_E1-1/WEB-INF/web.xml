@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>VotarServlet</servlet-name>
+        <servlet-class>com.bootcampjava.c10_e1.servlets.VotarServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>VotarServlet</servlet-name>
+        <url-pattern>/VotarServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MostrarResultadosServlet</servlet-name>
+        <servlet-class>com.bootcampjava.c10_e1.servlets.MostrarResultadosServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>MostrarResultadosServlet</servlet-name>
+        <url-pattern>/MostrarResultadosServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
