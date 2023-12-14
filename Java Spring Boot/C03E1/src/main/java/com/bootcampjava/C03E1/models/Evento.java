@@ -2,6 +2,7 @@ package com.bootcampjava.C03E1.models;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
