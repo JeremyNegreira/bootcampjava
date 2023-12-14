@@ -9,19 +9,19 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 public class EventoController {
-    List<Evento> listaEventos = new ArrayList<>();
-    int id = 1;
+    private final List<Evento> listaEventos = new ArrayList<>();
+    private Long id = 1L;
 
-    @PostMapping
+    @PostMapping("/evento")
     public Evento createEvent(@RequestBody Evento evento) {
         Evento nuevoEvento = new Evento(id++, evento.getTitulo(), evento.getDescripcion(),evento.getFecha(), evento.getHora(), evento.getLugar(), evento.getPonente());
         listaEventos.add(nuevoEvento);
         return nuevoEvento;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/evento/{id}")
     public Evento obtenerEventoPorId(@PathVariable int id) {
-        Evento resultadoBusquedaEventoPorId = listaEventos.stream().filter(e -> e.getId() == id).findFirst().orElse(null);
+        Evento resultadoBusquedaEventoPorId = listaEventos.stream().filter(evento -> evento.getId() == id).findFirst().orElse(null);
         return resultadoBusquedaEventoPorId;
     }
 
