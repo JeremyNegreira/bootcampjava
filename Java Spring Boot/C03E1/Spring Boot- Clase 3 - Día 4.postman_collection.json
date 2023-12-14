@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "528fb71a-35da-4701-ab83-d787e389b75a",
+		"name": "Spring Boot: Clase 3 - Día 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31807603"
+	},
+	"item": [
+		{
+			"name": "Crear evento 1",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Conferencia sobre Inteligencia Artificial\",\r\n  \"descripcion\": \"Una conferencia informativa sobre los avances recientes en inteligencia artificial.\",\r\n  \"fecha\": \"2023-12-14\",\r\n  \"hora\": \"15:00:00\",\r\n  \"lugar\": \"Centro de Convenciones\",\r\n  \"ponente\": \"Dr. Juan Pérez\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear evento 2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Taller de Desarrollo Web Moderno\",\r\n  \"descripcion\": \"Un taller práctico para aprender las últimas tecnologías de desarrollo web.\",\r\n  \"fecha\": \"2023-11-20\",\r\n  \"hora\": \"10:30:00\",\r\n  \"lugar\": \"Sala de Conferencias B\",\r\n  \"ponente\": \"Ing. María González\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear evento 3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"titulo\": \"Charla sobre Sostenibilidad Ambiental\",\r\n  \"descripcion\": \"Una charla informativa sobre prácticas sostenibles para preservar el medio ambiente.\",\r\n  \"fecha\": \"2023-10-05\",\r\n  \"hora\": \"14:00:00\",\r\n  \"lugar\": \"Auditorio Principal\",\r\n  \"ponente\": \"Dra. Ana Rodríguez\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/evento",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener eventos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/eventos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"eventos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar evento por ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/evento/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"evento",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
