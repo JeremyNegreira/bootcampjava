@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8080/api/vehicles",
+					"raw": "http://localhost:8080/api/vehicles/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -29,7 +29,8 @@
 					"port": "8080",
 					"path": [
 						"api",
-						"vehicles"
+						"vehicles",
+						""
 					]
 				}
 			},
@@ -39,7 +40,20 @@
 			"name": "Ver vehiculos",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						""
+					]
+				}
 			},
 			"response": []
 		},
@@ -47,7 +61,20 @@
 			"name": "Ver vehiculos ordenados por precios",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/prices",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"prices"
+					]
+				}
 			},
 			"response": []
 		},
@@ -55,7 +82,20 @@
 			"name": "Buscar vehículo id 1",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles",
+						"1"
+					]
+				}
 			},
 			"response": []
 		}

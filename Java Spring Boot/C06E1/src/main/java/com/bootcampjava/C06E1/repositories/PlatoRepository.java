@@ -1,6 +1,6 @@
 package com.bootcampjava.C06E1.repositories;
 
-import com.bootcampjava.C06E1.dto.PlatoDTO;
+import com.bootcampjava.C06E1.models.Plato;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.File;
@@ -13,26 +13,22 @@ import org.springframework.util.ResourceUtils;
 @Repository
 public class PlatoRepository {
 
-    private List<PlatoDTO> loadDataBase() {
+    public List<Plato> loadDataBase() {
         File file = null;
         try {
-            file = ResourceUtils.getFile("classpath:dishes.json");
+            file = ResourceUtils.getFile("src\\main\\java\\com.bootcampjava.C06E1.resources\\dishes.json");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
         ObjectMapper objectMapper = new ObjectMapper();
-        TypeReference<List<PlatoDTO>> typeRef = new TypeReference<>() {
+        TypeReference<List<Plato>> typeRef = new TypeReference<>() {
         };
-        List<PlatoDTO> platoDTO = null;
+        List<Plato> listaPlatos = null;
         try {
-            platoDTO = objectMapper.readValue(file, typeRef);
+            listaPlatos = objectMapper.readValue(file, typeRef);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return platoDTO;
-    }
-
-    public List<PlatoDTO> obtenerListaPlatos() {
-        return loadDataBase();
+        return listaPlatos;
     }
 }
