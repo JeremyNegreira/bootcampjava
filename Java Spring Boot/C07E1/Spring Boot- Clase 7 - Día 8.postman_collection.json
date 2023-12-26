@@ -1,0 +1,63 @@
+{
+	"info": {
+		"_postman_id": "c891fb90-f8fb-4a02-87f5-93e772ecb249",
+		"name": "Spring Boot: Clase 7 - Día 8",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31807603"
+	},
+	"item": [
+		{
+			"name": "Agregar vehículo ejemplo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"marca\": \"Peugeot\",\r\n    \"modelo\": \"206\",\r\n    \"kilometros\": 150000,\r\n    \"puertas\": 5,\r\n    \"precio\": 7500\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/vehicles",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver vehiculos",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Ver vehiculos ordenados por precios",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar vehículo id 1",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
